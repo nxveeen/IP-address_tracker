@@ -1,0 +1,16 @@
+{
+  "name": "1-ip-address-tracker-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "default": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.0.0-rc.0"
+  }
+}
