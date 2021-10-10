@@ -7,17 +7,22 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   font-size: 1.125rem;
   font-family: "Rubik", sans-serif;
 }
 
 header {
+  position: relative;
   width: 100vw;
   height: 18.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-image: url(/src/images/pattern-bg.png);
   background-repeat: no-repeat;
@@ -28,9 +33,81 @@ header h3 {
   font-weight: 500;
   color: #ffffff;
 }
+header label {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+}
+header label::after {
+  content: "";
+  position: absolute;
+  background-image: url(/src/images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
+  width: 3.75rem;
+  height: 3.75rem;
+  right: 0;
+  border-radius: 0 14px 14px 0;
+  background-color: black;
+  cursor: pointer;
+}
+header label input {
+  height: 3.75rem;
+  width: 100%;
+  border-radius: 14px;
+  padding: 1.25rem;
+  padding-right: 5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 4px #969696;
+}
+header label input[type=text] {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #2b2b2b;
+}
 
 .map__container {
   height: calc(100vh - 18.5rem);
+}
+
+.details {
+  position: absolute;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 18.375rem;
+  margin: 1.5rem;
+  top: 154px;
+  left: 0;
+  right: 0;
+  border-radius: 14px;
+  background-color: white;
+  z-index: 999;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+.details .sub {
+  text-align: center;
+}
+.details .sub .desc {
+  font-size: 10px;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  color: #969696;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.details .sub .value {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2b2b2b;
+}
+
+.dn {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

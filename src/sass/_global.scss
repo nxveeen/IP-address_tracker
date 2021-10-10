@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   font-size: 1.125rem;
   font-family: "Rubik", sans-serif;

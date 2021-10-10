@@ -1,10 +1,12 @@
 header {
+  position: relative;
   width: 100vw;
   height: 18.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  // justify-content: center;
   //   background: rgb(93, 130, 236);
   background-image: url(/src/images/pattern-bg.png);
   background-repeat: no-repeat;
@@ -14,5 +16,42 @@ header {
     font-size: 2rem;
     font-weight: 500;
     color: $white;
+  }
+  label {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url(/src/images/icon-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 14px;
+      width: 3.75rem;
+      height: 3.75rem;
+      right: 0;
+      border-radius: 0 14px 14px 0;
+      background-color: black;
+      cursor: pointer;
+    }
+
+    input {
+      height: 3.75rem;
+      width: 100%;
+      border-radius: 14px;
+      padding: 1.25rem;
+      padding-right: 5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 4px $dark-gray;
+
+      &[type="text"] {
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: $very-dark-gray;
+      }
+    }
   }
 }
