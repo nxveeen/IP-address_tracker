@@ -1,20 +1,44 @@
-export default class Map {
+import View from "./view.js";
+
+class Map extends View {
+  _map;
+  _myIconUrl = "/src/images/icon-location.svg";
+
   loadmap() {
     // console.log("loading map......");
-    var map = L.map("map", {
+    this._map = L.map("map", {
       zoomControl: false,
-    }).setView([51.505, -0.09], 13);
+    }).setView([28, 77.1], 7);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    }).addTo(this._map);
+  }
 
-    let myIcon = L.icon({
-      iconUrl: "/src/images/icon-location.svg",
-      iconSize: [46, 56],
-      iconAnchor: [22, 94],
-      popupAnchor: [1, -90],
+  addMarker(latlng) {
+    const myMarker = L.marker(latlng, {
+      icon: this._getIcon(),
+    });
+
+    myMarker.addTo(this._map);
+    this._map.panTo(latlng, { animate: true });
+    L.circle(latlng, { radius: 30000 }).addTo(this._map);
+  }
+
+  _getIcon() {
+    const icon_size = L.point(10, 12); //for dynamic icon size,
+    const image_url = this._myIconUrl; //for dynamic images
+
+    return L.icon({
+      iconUrl: image_url,
+      // shadowUrl: "leaf-shadow.png",
+
+      iconSize: icon_size.multiplyBy(3), // size of the icon
+      iconAnchor: [16, 50], // point of the icon which will correspond to marker's location
+      popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
     });
   }
 }
+
+export default new Map();

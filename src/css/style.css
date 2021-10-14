@@ -38,20 +38,6 @@ header label {
   width: 100%;
   margin: 2rem 0;
 }
-header label::after {
-  content: "";
-  position: absolute;
-  background-image: url(/src/images/icon-arrow.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 14px;
-  width: 3.75rem;
-  height: 3.75rem;
-  right: 0;
-  border-radius: 0 14px 14px 0;
-  background-color: black;
-  cursor: pointer;
-}
 header label input {
   height: 3.75rem;
   width: 100%;
@@ -66,6 +52,20 @@ header label input[type=text] {
   font-size: 1.125rem;
   font-weight: 500;
   color: #2b2b2b;
+}
+header label button {
+  position: absolute;
+  background-image: url(/src/images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
+  width: 3.75rem;
+  height: 3.75rem;
+  right: 0;
+  border-radius: 0 14px 14px 0;
+  background-color: black;
+  cursor: pointer;
+  border: none;
 }
 
 .map__container {
@@ -88,6 +88,8 @@ header label input[type=text] {
   background-color: white;
   z-index: 999;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  transform-origin: top;
+  transition: all 100ms;
 }
 .details .sub {
   text-align: center;
@@ -107,7 +109,7 @@ header label input[type=text] {
 }
 
 .dn {
-  display: none;
+  transform: scale(0);
 }
 
 /*# sourceMappingURL=style.css.map */

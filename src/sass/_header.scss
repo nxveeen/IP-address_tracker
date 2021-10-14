@@ -22,21 +22,6 @@ header {
     width: 100%;
     margin: 2rem 0;
 
-    &::after {
-      content: "";
-      position: absolute;
-      background-image: url(/src/images/icon-arrow.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 14px;
-      width: 3.75rem;
-      height: 3.75rem;
-      right: 0;
-      border-radius: 0 14px 14px 0;
-      background-color: black;
-      cursor: pointer;
-    }
-
     input {
       height: 3.75rem;
       width: 100%;
@@ -52,6 +37,21 @@ header {
         font-weight: 500;
         color: $very-dark-gray;
       }
+    }
+
+    button {
+      position: absolute;
+      background-image: url(/src/images/icon-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 14px;
+      width: 3.75rem;
+      height: 3.75rem;
+      right: 0;
+      border-radius: 0 14px 14px 0;
+      background-color: black;
+      cursor: pointer;
+      border: none;
     }
   }
 }
