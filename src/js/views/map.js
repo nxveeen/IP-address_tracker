@@ -22,7 +22,7 @@ class Map extends View {
     });
 
     myMarker.addTo(this._map);
-    this._map.panTo(latlng, { animate: true });
+    this._map.panTo(latlng, { animate: true, duration: 1 });
     L.circle(latlng, { radius: 30000 }).addTo(this._map);
   }
 
@@ -32,7 +32,6 @@ class Map extends View {
 
     return L.icon({
       iconUrl: image_url,
-      // shadowUrl: "leaf-shadow.png",
 
       iconSize: icon_size.multiplyBy(3), // size of the icon
       iconAnchor: [16, 50], // point of the icon which will correspond to marker's location

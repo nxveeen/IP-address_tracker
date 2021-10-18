@@ -29,9 +29,9 @@ export const fetchData = async function (ipAddress = " ") {
       },
       type: result.type,
     };
-
-    state.markers.push(result.ip);
     console.log(state.markers);
+    if (!state.markers.includes(result.ip)) state.markers.push(result.ip);
+    else return;
   } catch (err) {
     console.log(`${err}😂😂😂`);
   }
